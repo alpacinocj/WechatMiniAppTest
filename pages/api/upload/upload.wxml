@@ -1,0 +1,89 @@
+<import src="../../common/header.wxml" />
+<import src="../../common/footer.wxml" />
+<view class="container">
+  <template is="header" data="{{title: pageTitle}}"></template>
+  <view class="demo-list upload-img-wrp">
+
+    <!--选择图片-->
+    <view class="demo-item">
+      <view class="choose-img">
+        <view class="choose-control">
+          <view class="choose-control-row">
+            <text>图片来源 : </text>
+            <radio-group id="sourceType" bindchange="radioChanged">
+              <block wx:for="{{sourceType}}" wx:key="{{item.name}}">
+                <label for="{{item.name}}">
+                  <block wx:if="{{item.name == checkedSourceType}}">
+                    <radio name="source-type" id="{{item.name}}" value="{{item.name}}" checked></radio> {{item.title}}
+                  </block>
+                  <block wx:else>
+                    <radio name="source-type" id="{{item.name}}" value="{{item.name}}"></radio> {{item.title}}
+                  </block>
+                </label>
+              </block>
+            </radio-group>
+          </view>
+          <view class="choose-control-row">
+            <text>图片质量 : </text>
+            <radio-group id="sizeType" bindchange="radioChanged">
+              <block wx:for="{{sizeType}}" wx:key="{{item.name}}">
+                <label for="{{item.name}}">
+                  <block wx:if="{{item.name == checkedSizeType}}">
+                    <radio name="source-type" id="{{item.name}}" value="{{item.name}}" checked></radio> {{item.title}}
+                  </block>
+                  <block wx:else>
+                    <radio name="source-type" id="{{item.name}}" value="{{item.name}}"></radio> {{item.title}}
+                  </block>
+                </label>
+              </block>
+            </radio-group>
+          </view>
+        </view>
+        <view class="weui-uploader__input-box">
+          <view class="weui-uploader__input" bindtap="chooseImage"></view>
+        </view>
+      </view>
+    </view>
+
+    <!--预览图片-->
+    <view class="demo-item">
+      <view class="preview-img">
+        <view>
+          <text>图片预览 : </text>
+        </view>
+        <block wx:if="{{choosedImg}}">
+          <view class="weui-uploader__file">
+            <image class="weui-uploader__img" src="{{choosedImg}}" data-src="{{choosedImg}}"></image>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <!--图片信息-->
+    <view class="demo-item">
+      <view class="img-info">
+        <block wx:if="{{choosedImgInfo}}">
+          <view>
+            <text>图片宽度 : </text>
+            <text>{{choosedImgInfo.width}}px</text>
+          </view>
+          <view>
+            <text>图片高度 : </text>
+            <text>{{choosedImgInfo.height}}px</text>
+          </view>
+          <view>
+            <text>图片本地路径 : </text>
+            <text>{{choosedImgInfo.path}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <!--上传图片-->
+    <view class="demo-item">
+      <view class="upload-img">
+        <button bindtap="uploadImage">上传</button>
+      </view>
+    </view>
+  </view>
+</view>

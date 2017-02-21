@@ -1,0 +1,13 @@
+@import "../../common/public.wxss";
+
+.component-progress {
+    width: 100%;
+    padding: 10px;
+    min-height: 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.progress-controll {
+    margin-top: 20px;
+}

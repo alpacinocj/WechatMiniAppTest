@@ -1,0 +1,6 @@
+<import src="../../common/header.wxml" />
+<import src="../../common/footer.wxml" />
+<view class="container">
+  <template is="header" data="{{title: pageTitle}}"></template>
+  <view><text>网络状态: </text><text>{{networkType}}</text></view>
+</view>

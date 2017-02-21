@@ -1,0 +1,15 @@
+<import src="../../common/header.wxml" />
+<import src="../../common/footer.wxml" />
+<view class="container">
+  <template is="header" data="{{title: pageTitle}}"></template>
+  <view>
+    <view><text>手机型号: </text><text>{{model}}</text></view>
+    <view><text>设备像素比: </text><text>{{pixelRatio}}</text></view>
+    <view><text>窗口宽度: </text><text>{{windowWidth}}</text></view>
+    <view><text>窗口高度: </text><text>{{windowHeight}}</text></view>
+    <view><text>微信设置的语言: </text><text>{{language}}</text></view>
+    <view><text>微信版本号: </text><text>{{version}}</text></view>
+    <view><text>操作系统版本: </text><text>{{system}}</text></view>
+    <view><text>客户端平台: </text><text>{{platform}}</text></view>
+  </view>
+</view>

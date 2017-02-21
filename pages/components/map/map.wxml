@@ -1,0 +1,51 @@
+<import src="../../common/header.wxml" />
+<import src="../../common/footer.wxml" />
+<view class="container">
+  <template is="header" data="{{title: pageTitle}}"></template>
+  <!--
+    map组件参数说明 : 
+      longitude: 地图中心经度,
+      latitude: 地图中心纬度,
+      markers:  标记点用于在地图上显示标记位置,
+        参数: Object Array : 
+        [
+          {
+            id: 标记点id,marker点击事件回调会返回此id
+            longitude: 标记点经度,
+            latitude: 标记点纬度,
+            title: 标注点名,
+            iconPath: 显示的图标,
+            rotate: 旋转角度,
+            alpha: 标注的透明度,
+            width: 标注图标宽度, 默认为图片实际宽度,
+            height: 标注图标高度, 默认为图片实际高度
+          }
+        ]
+      polyline: 坐标点连线,
+        参数: Object Array
+        [
+          {
+            points: [{latitude: 0, longitude: 0}],  // 经纬度数组, 
+            color: #000000AA,   // 线的颜色
+            width: 6,     // 线的宽度
+            dottedLine: false,  // 是否虚线, 默认false
+          }
+        ]
+      controls: 地图控件, 不随地图移动
+        参数: Object Array
+        [
+          {
+            id: 控件id	Number 在控件点击事件回调会返回此id,
+            iconPath: 显示的图标,
+            clickable: 是否可点击, 默认false,
+            position: {   // 控件相对地图位置
+              left: 距离地图的左边界, 默认0
+              top: 距离地图的上边界, 默认0
+              width: 控件宽度,
+              height: 控件高度
+            }
+          }
+        ]
+  -->
+  <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" polyline="{{polyLine}}" controls="{{controls}}" />
+</view>

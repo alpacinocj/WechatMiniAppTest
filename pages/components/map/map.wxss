@@ -1,0 +1,6 @@
+@import "../../common/public.wxss";
+
+#map {
+    width: 96%;
+    height: 600rpx;
+}

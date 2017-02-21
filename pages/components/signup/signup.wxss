@@ -1,0 +1,35 @@
+@import "../../common/public.wxss";
+
+.user-initialize {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 14px;
+}
+
+.field-item {
+    background-color: #fff;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+}
+
+.field-item label text {
+    color: deepskyblue;
+}
+
+.field-item input {
+    border-bottom: 1px solid #ddd;
+}
+
+.btn-captcha {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-behavior {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}

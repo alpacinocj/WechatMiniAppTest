@@ -1,0 +1,7 @@
+@import "../../common/public.wxss";
+@import "../signup/signup.wxss";
+
+.user-info {
+    margin-top: 20px;
+    font-size: 14px;
+}

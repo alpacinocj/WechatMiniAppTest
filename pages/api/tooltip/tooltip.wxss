@@ -1,0 +1,11 @@
+@import "../../common/public.wxss";
+
+.tooltip-control {
+    width: 100%;
+    margin: 20rpx auto;
+    padding: 10px;
+}
+
+.tooltip-control-item {
+    margin-bottom: 10px;
+}

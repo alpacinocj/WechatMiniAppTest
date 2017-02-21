@@ -1,0 +1,18 @@
+@import "../../common/public.wxss";
+
+.upload-img-wrp {
+    padding: 0 10px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.upload-img-wrp .choose-control-row {
+    margin-bottom: 10px;
+}
+
+.weui-uploader__input-box {
+    left: 50%;
+    margin-left: -38.5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

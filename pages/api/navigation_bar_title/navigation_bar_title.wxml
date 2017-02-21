@@ -1,0 +1,6 @@
+<import src="../../common/header.wxml" />
+<import src="../../common/footer.wxml" />
+<view class="container">
+  <template is="header" data="{{title: pageTitle}}"></template>
+  <button type="default" bindtap="goBack">返回上一页</button>
+</view>

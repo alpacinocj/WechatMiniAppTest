@@ -1,0 +1,37 @@
+<import src="../../common/header.wxml" />
+<import src="../../common/footer.wxml" />
+<view class="container">
+  <template is="header" data="{{title: pageTitle}}"></template>
+  <view class="user-initialize">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="field-item field-type">
+        <label><text>用户类型: </text></label>
+        <radio-group bindchange="radioChange" id="client_type">
+          <block wx:for="{{userType}}" wx:key="{{item.name}}">
+            <label for="{{item.name}}">
+              <radio name="client_type" value="{{item.name}}" checked="{{item.checked}}"></radio> {{item.title}}
+            </label>
+          </block>
+        </radio-group>
+      </view>
+      <view class="field-item field-phone">
+        <label for="phone"><text>手机号: </text><input type="text" name="phone" id="phone" placeholder="请输入手机号" /></label>
+      </view>
+      <view class="field-item field-password">
+        <label for="password"><text>密码: </text><input password type="text" name="password" id="password" placeholder="请输入密码"/></label>
+      </view>
+      <view class="btn-behavior">
+        <button type="primary" size="mini" form-type="submit">登录</button>
+        <button type="warn" size="mini" form-type="reset">取消</button>
+      </view>
+    </form>
+  </view>
+  <block wx:if="{{loginSuccess}}">
+    <view class="user-info">
+      <view><label>Id: </label><text>{{userInfo.id}}</text></view>
+      <view><label>Mobile: </label><text>{{userInfo.mobile}}</text></view>
+      <view><label>Gender: </label><text>{{userInfo.sex}}</text></view>
+      <view><label>Type: </label><text>{{userInfo.type}}</text></view>
+    </view>
+  </block>
+</view>

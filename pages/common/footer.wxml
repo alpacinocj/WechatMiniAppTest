@@ -1,0 +1,5 @@
+<template name="footer">
+    <view class="page-footer">
+        <image src="../../icons/icon_foot.png"></image>
+    </view>
+</template>

@@ -1,0 +1,12 @@
+<import src="../../common/header.wxml" />
+<import src="../../common/footer.wxml" />
+<view class="container">
+  <template is="header" data="{{title: pageTitle}}"></template>
+  <view>
+    <view><text>当前经度: </text><text>{{longitude}}</text></view>
+    <view><text>当前纬度: </text><text>{{latitude}}</text></view>
+    <view><text>速度: </text><text>{{speed}} m/s</text></view>
+    <view><text>位置精确度: </text><text>{{accuracy}}</text></view>
+    <view><button bindtap="openLocation">查看当前位置</button></view>
+  </view>
+</view>

@@ -1,0 +1,31 @@
+<import src="../../common/header.wxml" />
+<import src="../../common/footer.wxml" />
+<view class="container">
+  <template is="header" data="{{title: pageTitle}}"></template>
+  <view class="demo-list">
+    <view class="demo-item">
+      <text>1. 普通选择器</text>
+      <picker mode="selector" range="{{fruitsArray}}" value="{{index}}" bindchange="normalSelectorChanged">
+        <view>
+          <text>当前选择: {{fruitsArray[index]}}</text>
+        </view>
+      </picker>
+    </view>
+    <view class="demo-item">
+      <text>2. 时间选择器</text>
+      <picker mode="time" start="{{startTime}}" end="{{endTime}}" value="{{curTime}}" bindchange="timeSelectorChanged">
+        <view>
+          <text>当前选择: {{curTime}}</text>
+        </view>
+      </picker>
+    </view>
+    <view class="demo-item">
+      <text>3. 日期选择器</text>
+      <picker mode="date" start="{{startDate}}" end="{{endDate}}" value="{{curDate}}" bindchange="dateSelectorChanged">
+        <view>
+          <text>当前选择: {{curDate}}</text>
+        </view>
+      </picker>
+    </view>
+  </view>
+</view>

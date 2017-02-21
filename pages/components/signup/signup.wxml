@@ -1,0 +1,35 @@
+<import src="../../common/header.wxml" />
+<import src="../../common/footer.wxml" />
+<view class="container">
+  <template is="header" data="{{title: pageTitle}}"></template>
+  <view class="user-initialize">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="field-item field-type">
+        <label><text>用户类型: </text></label>
+        <radio-group bindchange="radioChange" id="client_type">
+          <block wx:for="{{userType}}" wx:key="{{item.name}}">
+            <label for="{{item.name}}">
+              <radio name="client_type" value="{{item.name}}" checked="{{item.checked}}"></radio> {{item.title}}
+            </label>
+          </block>
+        </radio-group>
+      </view>
+      <view class="field-item field-phone">
+        <label for="phone"><text>手机号: </text><input type="text" name="phone" id="phone" bindinput="afterInput" bindblur="afterBlur" placeholder="请输入手机号" /></label>
+      </view>
+      <view class="field-item field-password">
+        <label for="password"><text>密码: </text><input password type="text" name="password" id="password" placeholder="请输入密码"/></label>
+      </view>
+      <view class="field-item field-captcha">
+        <label for="captcha"><text>验证码: </text><input type="number" name="captcha" id="captcha" placeholder="请输入验证码"/></label>
+      </view>
+      <view class="field-item btn-captcha">
+        <button type="default" size="mini" bindtap="getCaptcha" disabled="{{disabled}}" loading="{{loading}}">获取验证码</button>
+      </view>
+      <view class="btn-behavior">
+        <button type="primary" size="mini" form-type="submit">提交</button>
+        <button type="warn" size="mini" form-type="reset">重置</button>
+      </view>
+    </form>
+  </view>
+</view>

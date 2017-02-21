@@ -1,0 +1,21 @@
+<import src="../../common/header.wxml" />
+<import src="../../common/footer.wxml" />
+<view class="container">
+  <template is="header" data="{{title: '接口首页'}}"></template>
+  <view class="demo-list" id="demoList">
+    <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+      <view class="demo-item">
+        <view class="demo-item-title">
+          <text>{{item.title}}({{item.id}})</text>
+        </view>
+        <view class="demo-item-section">
+          <block wx:for-items="{{item.sections}}" wx:for-item="section" wx:key="{{item.id}}">
+            <navigator url="../{{section.page}}/{{section.page}}?page_title={{section.page}}" open-type="{{section.open_type ? section.open_type : 'navigate'}}" class="demo-item-row" hover-class="navigator-hover">
+              <view class="section-desc">{{section.desc}}</view>
+            </navigator>
+          </block>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

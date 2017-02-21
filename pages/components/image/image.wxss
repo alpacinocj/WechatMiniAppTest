@@ -1,0 +1,7 @@
+@import "../../common/public.wxss";
+
+.img-list .img-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

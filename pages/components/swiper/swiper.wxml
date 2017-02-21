@@ -1,0 +1,30 @@
+<import src="../../common/header.wxml" />
+<import src="../../common/footer.wxml" />
+<view class="container">
+  <template is="header" data="{{title: pageTitle}}"></template>
+  <swiper class="swiper-box" indicator-dots="{{showDots}}" autoplay="{{autoPlay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="swiper-controll">
+    <view>
+      <text>是否显示指示点: </text>
+      <switch type="switch" id="showDots" bindchange="switchChanged" checked="{{showDots}}"/>
+    </view>
+    <view>
+      <text>是否自动播放: </text>
+      <switch type="switch" id="autoPlay" bindchange="switchChanged" checked="{{autoPlay}}"/>
+    </view>
+    <view>
+      <text>是否循环播放: </text>
+      <switch type="switch" id="loopPlay" bindchange="switchChanged" checked="{{circular}}"/>
+    </view>
+    <view>
+      <text>切换间隔时长: {{interval / 1000}}秒</text>
+      <slider min="1000" max="3000" step="1000" value="{{interval}}" show-value bindchange="sliderChanged"/>
+    </view>
+  </view>
+</view>

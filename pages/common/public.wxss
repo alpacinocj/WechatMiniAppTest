@@ -1,0 +1,57 @@
+@import "./weui.wxss";
+
+.page-header {
+    margin: 20px auto;
+}
+
+.page-header .page-title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.row-hover {
+    background-color: #fffacd;
+}
+
+.navigator-hover {
+    background-color: #f5f5dc;
+    color: deepskyblue;
+}
+
+.demo-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #f5f5f5;
+}
+
+.demo-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.demo-list .demo-item-title {
+    padding: 0 10px;
+}
+
+.demo-list .demo-item-title text {
+    font-size: 14px;
+    font-weight: bold;
+    color: deepskyblue;
+    padding-left: 5px;
+    border-left: 2px solid gold;
+}
+
+.demo-item-section {
+    font-size: 12px;
+}
+
+.demo-item-section .demo-item-row {
+    padding: 10px 20px 10px 10px;
+    margin: 5px auto;
+    background: #fff url('../../../icons/right_arrow.png') no-repeat 98% center;
+}

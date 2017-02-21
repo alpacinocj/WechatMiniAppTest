@@ -1,0 +1,30 @@
+<import src="../../common/header.wxml" />
+<import src="../../common/footer.wxml" />
+<view class="container">
+  <template is="header" data="{{title: pageTitle}}"></template>
+  <view class="component-progress">
+    <progress percent="{{percent}}" show-info="{{showInfo}}" stroke-width="{{strokeWidth}}" color="{{curColor}}" />
+  </view>
+  <view class="progress-controll">
+    <view>
+      <text>是否右侧显示百分比 : </text>
+      <switch type="switch" id="showInfo" checked="{{showInfo}}" bindchange="switchChanged" />
+    </view>
+    <view>
+      <text>是否从左到右动画 : </text>
+      <switch type="switch" id="active" checked="{{active}}" bindchange="switchChanged" />
+    </view>
+    <view>
+      <text>进度条宽度 : </text>
+      <slider min="1" max="10" value="{{strokeWidth}}" bindchange="sliderChanged" show-value/>
+    </view>
+    <view>
+      <text>进度条颜色 : </text>
+      <radio-group id="colors" bindchange="radioChanged">
+        <block wx:for="{{colors}}" wx:key="{{index}}">
+          <label><radio name="color" value="{{item}}" /> {{index ? item : 'default'}}</label>
+        </block>
+      </radio-group>
+    </view>
+  </view>
+</view>
