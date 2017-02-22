@@ -1,0 +1,15 @@
+<import src="../../common/header.wxml" />
+<import src="../../common/footer.wxml" />
+<view class="container">
+  <template is="header" data="{{title: pageTitle}}"></template>
+  <view style="margin: 20px auto;">
+    <text>设置缓存失效时间(秒) : </text>
+    <input name="expires" id="expires" value="{{expires}}" bindinput="inputChanged"/>
+  </view>
+  <view>
+    <button bindtap="setCache">设置缓存</button>
+    <button bindtap="getCache">获取缓存</button>
+    <button bindtap="removeCache">删除缓存</button>
+    <button bindtap="clearCache">清空缓存</button>
+  </view>
+</view>

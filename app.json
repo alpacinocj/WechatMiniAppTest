@@ -21,6 +21,7 @@
     "pages/api/request_class/request_class",
     "pages/api/upload/upload",
     "pages/api/download/download",
+    "pages/api/cache/cache",
     "pages/api/tooltip/tooltip",
     "pages/api/action_sheet/action_sheet",
     "pages/api/get_location/get_location",

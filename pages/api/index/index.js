@@ -30,6 +30,16 @@ Page({
                 ]
             },
             {
+                id: 'cache',
+                title: '缓存',
+                sections: [
+                    {
+                        desc: '本地缓存',
+                        page: 'cache'
+                    }
+                ]
+            },
+            {
                 id: 'interaction',
                 title: '界面交互反馈',
                 sections: [
