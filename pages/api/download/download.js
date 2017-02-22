@@ -28,7 +28,7 @@ Page({
                 // success
                 console.log(res);   // {statusCode: xxx, errMsg: xxx, tempFilePath: xxx}
                 if (res.statusCode == 200) {
-                    // TODO
+                    that.saveDownloadFile(res.tempFilePath);
                     wx.showToast({
                         title: messages.download_source_success
                     });
@@ -51,23 +51,29 @@ Page({
         });
     },
     saveDownloadFile: function (filePath) {
+        console.log('save start');
         // 先从缓存获取看是否已保存过
-        var cacheKey = this.data.fileStoragekey;
+        var cacheKey = this.data.fileStorageKey;
         var that = this;
         wx.getStorage({
             key: cacheKey,
             success: function (res) {
+                console.log('get storage success');
                 // success
                 if (!res.data) {
-                    // save file and set storage
+                    // 如果缓存为空则保存文件并更新缓存
                     wx.saveFile({
                         tempFilePath: filePath,
                         success: function(res) {
+                            console.log('save success');
                             var savedFilePath = res.savedFilePath;
                             wx.setStorage({
                               key: cacheKey,
                               data: savedFilePath
                             });
+                        },
+                        faile: function() {
+                            console.log('save fail');
                         }
                     });
                 }
@@ -76,8 +82,9 @@ Page({
                     downloadedSource: filePath
                 });
             },
-            faile: function (res) {
+            fail: function (res) {
                 // fail
+                console.log('get storage fail');
                 return;
             }
         })

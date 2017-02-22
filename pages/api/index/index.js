@@ -8,6 +8,10 @@ Page({
                     {
                         desc: '发送请求到服务端',
                         page: 'request'
+                    },
+                    {
+                        desc: '测试request请求类(Promise语法封装)',
+                        page: 'request_class'
                     }
                 ]
             },
