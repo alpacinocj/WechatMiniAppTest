@@ -56,9 +56,9 @@ Page({
     showModalTips: function() {
         // 模态弹窗提示
         wx.showModal({
-            title: '模态框提示',
+            //title: '模态框提示',
             content: 'hello world',
-            showCancel: true,
+            showCancel: false,
             cancelText: '取消',   // cancelText length should not large then 4
             cancelColor: '#ff0000',
             confirmText: '确定',

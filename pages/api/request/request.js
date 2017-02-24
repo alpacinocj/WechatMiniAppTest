@@ -12,8 +12,8 @@ Page({
     },
     requestApi: function() {
         wx.request({
-          //url: config.api_test.url,
-          url: '',
+          url: config.api_test.url,
+          //url: '',
           data: {},
           method: config.api_test.method, // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
           // header: {}, // 设置请求的 header
