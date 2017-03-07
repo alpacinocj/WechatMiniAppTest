@@ -5,9 +5,9 @@
   <view class="demo-list">
     <view class="demo-item">
       <text>1. 普通选择器</text>
-      <picker mode="selector" range="{{fruitsArray}}" value="{{index}}" bindchange="normalSelectorChanged">
+      <picker mode="selector" range="{{fruits}}" range-key="title" value="{{index}}" bindchange="normalSelectorChanged">
         <view>
-          <text>当前选择: {{fruitsArray[index]}}</text>
+          <text>当前选择: {{fruits[index].title}}</text>
         </view>
       </picker>
     </view>

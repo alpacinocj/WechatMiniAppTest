@@ -8,6 +8,12 @@ Page({
     },
     onLoad: function(options) {
         console.log(options);
+        try {
+            var cacheData = wx.getStorageSync('logs');
+            console.log(typeof cacheData);
+        } catch(e) {
+            console.log(e);
+        }
         this.setData({
             pageTitle: options.page_title
         });

@@ -1,5 +1,6 @@
 var config = require('../../../config.js');
 var messages = require('../../../utils/messages.js');
+var uploadFile = require('../../../utils/upload');
 
 Page({
     data: {
@@ -162,6 +163,20 @@ Page({
             },
             complete: function () {
                 // complete
+            }
+        });
+    },
+    uploadImageSimple: function() {
+        uploadFile({
+            url: config.api_upload_img.url,
+            //url: '',
+            filePath: this.data.choosedImg,
+            name: 'data',
+            success: function(res) {
+                console.log(res);
+            },
+            fail: function(res) {
+                console.log(res);
             }
         });
     }

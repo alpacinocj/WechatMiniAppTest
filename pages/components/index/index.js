@@ -77,6 +77,10 @@ Page({
                     {
                         desc: '滚动选择器',
                         page: 'picker'
+                    },
+                    {
+                        desc: '多行文本框',
+                        page: 'textarea'
                     }
                 ]
             },

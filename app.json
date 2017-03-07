@@ -16,6 +16,7 @@
     "pages/components/progress/progress",
     "pages/components/picker/picker",
     "pages/components/map/map",
+    "pages/components/textarea/textarea",
     "pages/api/index/index",
     "pages/api/request/request",
     "pages/api/request_class/request_class",

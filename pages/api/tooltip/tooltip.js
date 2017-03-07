@@ -58,7 +58,7 @@ Page({
         wx.showModal({
             //title: '模态框提示',
             content: 'hello world',
-            showCancel: false,
+            showCancel: true,
             cancelText: '取消',   // cancelText length should not large then 4
             cancelColor: '#ff0000',
             confirmText: '确定',

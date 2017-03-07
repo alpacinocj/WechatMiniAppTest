@@ -24,6 +24,7 @@ Page({
                 return;
             },
             fail: function () {
+                console.log('用户未授权获取地理位置');
                 // show tips
                 wx.showToast({
                     title: messages.get_location_fail
