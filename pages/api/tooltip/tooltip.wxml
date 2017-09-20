@@ -43,5 +43,14 @@
         <button bindtap="showModalTips">模态弹窗提示</button>
       </view>
     </view>
+    <view class="demo-item">
+      <view>
+        <text>3. loading提示</text>
+      </view>
+      <view>
+        <button bindtap="showLoading">显示loading</button>
+        <button bindtap="hideLoading">隐藏loading</button>
+      </view>
+    </view>
   </view>
 </view>

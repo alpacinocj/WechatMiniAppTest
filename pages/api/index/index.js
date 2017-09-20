@@ -26,6 +26,10 @@ Page({
                     {
                         desc: '资源下载',
                         page: 'download'
+                    },
+                    {
+                        desc: '证件识别',
+                        page: 'card_ocr'
                     }
                 ]
             },
@@ -64,6 +68,10 @@ Page({
                     {
                         desc: '获取当前地理位置, 速度',
                         page: 'get_location'
+                    },
+                    {
+                        desc: '地图服务',
+                        page: 'map'
                     }
                 ]
             },

@@ -52,8 +52,8 @@ Page({
 
         // 请求登录接口
         wx.request({
-            url: config.api_signin.url,
-            method: config.api_signin.method,
+            url: config.api.signin.url,
+            method: config.api.signin.method,
             data: data,
             header: {
                 'content-type': 'application/x-www-form-urlencoded'

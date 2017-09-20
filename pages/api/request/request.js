@@ -12,29 +12,31 @@ Page({
     },
     requestApi: function() {
         wx.request({
-          url: config.api_test.url,
+          url: config.api.test.url,
           //url: '',
           data: {},
-          method: config.api_test.method, // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+          method: config.api.test.method, // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
           // header: {}, // 设置请求的 header
           success: function(res){
             // success
-            console.log(res);
+            console.log('success', res);
             wx.showToast({
-                title: res.data.message,
+                title: res.data.result.message,
                 icon: 'success',
                 duration: 2000
             });
           },
-          fail: function() {
+          fail: function(error) {
+              console.log('fail', error);
             // fail
             wx.showToast({
                 title: '请求失败',
                 duration: 2000
             });
           },
-          complete: function() {
+          complete: function(error) {
             // complete
+            console.log('complete', error);
           }
         })
     }

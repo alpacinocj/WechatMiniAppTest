@@ -1,4 +1,6 @@
 var messages = {
+    file_is_uploading: '上传中...',
+    file_is_identifying: '识别中...',
     phone_can_not_empty: '手机号不能为空',
     password_can_not_empty: '密码不能为空',
     captcha_can_not_empty: '验证码不能为空',

@@ -2,100 +2,80 @@
 const APP_ENV = 'local';
 
 // 全局配置对象
-var config;
+var config = {};
+
+var apiHost, socketHost, uploadHost, downloadHost;
+var apiVersion;
 
 if (APP_ENV == 'local') {
 
     // 本地
-    const API_HOST = 'http://yunbei.api.com';
-    const SOCKET_HOST = 'wss://yunbei.api.com';
-    const UPLOAD_HOST = 'https://14592619.qcloud.la';
-    const DOWNLOAD_HOST = 'http://yunbei.api.com';
+    apiHost = 'http://yunbei.api.com';
+    socketHost = 'wss://yunbei.api.com';
+    uploadHost = 'https://14592619.qcloud.la';
+    downloadHost = 'http://yunbei.api.com';
 
-    config = {
-
-        version: '1.0',
-
-        // 测试接口地址
-        api_test: {
-            method: 'GET',
-            url: API_HOST + '/v2_0/tests/success'
-        },
-
-        // 用户注册接口
-        api_signup: {
-            method: 'POST',
-            url: API_HOST + '/v2_0/users/signup'
-        },
-
-        // 登录接口
-        api_signin: {
-            method: 'POST',
-            url: API_HOST + '/v2_0/users/signin'
-        },
-
-        // 发送验证码接口
-        api_captcha: {
-            method: 'GET',
-            url: API_HOST + '/v2_0/commons/captcha'
-        },
-
-        // 图片上传接口
-        api_upload_img: {
-            method: 'POST',
-            url: UPLOAD_HOST + '/upload'
-        },
-
-    };
+    apiVersion = 'v2_0';
 
 } else if (APP_ENV == 'test') {
 
     // 测试
-    const API_HOST = 'http://api.test.afd56.com.cn';
-    const SOCKET_HOST = 'wss://api.test.afd56.com.cn';
-    const UPLOAD_HOST = 'http://api.test.afd56.com.cn';
-    const DOWNLOAD_HOST = 'http://api.test.afd56.com.cn';
+    apiHost = 'http://api.dev.afd56.com.cn';
+    socketHost = 'wss://api.dev.afd56.com.cn';
+    uploadHost = 'http://api.dev.afd56.com.cn';
+    downloadHost = 'http://api.dev.afd56.com.cn';
 
-    config = {
-
-        version: '1.0',
-
-        // 测试接口地址
-        api_test: {
-            method: 'GET',
-            url: API_HOST + '/v2_0/tests/success'
-        },
-
-        // 用户注册接口
-        api_signup: {
-            method: 'POST',
-            url: API_HOST + '/v2_0/users/signup'
-        },
-
-        // 登录接口
-        api_signin: {
-            method: 'POST',
-            url: API_HOST + '/v2_0/users/signin'
-        },
-
-        // 发送验证码接口
-        api_captcha: {
-            method: 'GET',
-            url: API_HOST + '/v2_0/commons/captcha'
-        },
-
-        // 图片上传接口(base64格式)
-        api_upload_img: {
-            method: 'POST',
-            url: UPLOAD_HOST + '/v2_0/commons/img_upload'
-        },
-
-    };
+    apiVersion = 'v2_0';
 
 } else if (APP_ENV == 'production') {
 
     // 正式 TODO
 
 }
+
+config.api = {
+
+    // 测试接口地址
+    test: {
+        method: 'GET',
+        url: apiHost + '/' + apiVersion + '/tests/index'
+    },
+
+    // 测试后台运行时长
+    backRunning: {
+        method: 'GET',
+        url: apiHost + '/' + apiVersion + '/tests/error'
+    },
+
+    // 用户注册接口
+    signup: {
+        method: 'POST',
+        url: apiHost + '/' + apiVersion + '/users/signup'
+    },
+
+    // 登录接口
+    signin: {
+        method: 'POST',
+        url: apiHost + '/' + apiVersion + '/users/signin'
+    },
+
+    // 发送验证码接口
+    captcha: {
+        method: 'GET',
+        url: apiHost + '/' + apiVersion + '/commons/captcha'
+    },
+
+    // 图片上传接口
+    uploadImg: {
+        method: 'POST',
+        url: apiHost + '/' + apiVersion + '/commons/img_upload'
+    },
+
+    // 证件识别
+    cardOcr: {
+        method: 'POST',
+        url: apiHost + '/' + apiVersion + '/tests/certificate_identify'
+    }
+};
 
 module.exports = config;

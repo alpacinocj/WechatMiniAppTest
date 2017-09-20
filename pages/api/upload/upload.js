@@ -122,10 +122,9 @@ Page({
             return;
         }
 
-        console.log(config.api_upload_img.url);
         // 上传图片
         wx.uploadFile({
-            url: config.api_upload_img.url,
+            url: config.api.uploadImg.url,
             filePath: choosedImg,    // 要上传文件资源的路径
             name: 'data',  // 文件对应的 key , 开发者在服务器端通过这个 key 可以获取到文件二进制内容, $_FILES[name]
             header: {
@@ -163,20 +162,6 @@ Page({
             },
             complete: function () {
                 // complete
-            }
-        });
-    },
-    uploadImageSimple: function() {
-        uploadFile({
-            url: config.api_upload_img.url,
-            //url: '',
-            filePath: this.data.choosedImg,
-            name: 'data',
-            success: function(res) {
-                console.log(res);
-            },
-            fail: function(res) {
-                console.log(res);
             }
         });
     }

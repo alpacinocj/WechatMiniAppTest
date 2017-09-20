@@ -42,8 +42,8 @@ Page({
         *****************************/
         request()
         //.get('')
-        .get(config.api_test.url)
-        //.post(config.api_test.url)
+        .get(config.api.test.url)
+        //.post(config.api.test.url)
         .query({name:'jack'})
         .header({'content-type': 'application/json'})
         .end()

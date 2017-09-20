@@ -79,8 +79,20 @@ Page({
                         page: 'picker'
                     },
                     {
+                        desc: '页面嵌入滚动选择器',
+                        page: 'picker_view'
+                    },
+                    {
                         desc: '多行文本框',
                         page: 'textarea'
+                    },
+                    {
+                        desc: '多选按钮',
+                        page: 'checkbox'
+                    },
+                    {
+                        desc: '地址选择',
+                        page: 'choose_address'
                     }
                 ]
             },

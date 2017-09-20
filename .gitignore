@@ -1,0 +1,13 @@
+# ---> ExtJs
+.architect
+bootstrap.json
+build/
+ext/
+
+# ---> Fancy
+*.rbc
+*.fyc
+
+config/app_env.js
+config/config_local.js
+pages/test/*

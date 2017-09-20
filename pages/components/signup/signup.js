@@ -60,8 +60,8 @@ Page({
 
         // 请求注册接口
         wx.request({
-            url: config.api_signup.url,
-            method: config.api_signup.method,
+            url: config.api.signup.url,
+            method: config.api.signup.method,
             data: {
                 phone: data.phone,
                 password: data.password,
@@ -129,8 +129,8 @@ Page({
 
         // 请求验证码接口
         wx.request({
-            url: config.api_captcha.url,
-            method: config.api_captcha.method,
+            url: config.api.captcha.url,
+            method: config.api.captcha.method,
             data: {
                 phone: phone,
                 action: 'signup',

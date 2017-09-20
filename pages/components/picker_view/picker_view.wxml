@@ -1,0 +1,19 @@
+<import src="../../common/header.wxml" />
+<import src="../../common/footer.wxml" />
+<view class="container">
+  <template is="header" data="{{title: pageTitle}}"></template>
+  <button bindtap="chooseArea">选择地区</button>
+  <view wx:if="{{areaShow}}">
+    <picker-view indicator-style="height: 50rpx;" style="width: 100%; height: 300px;" value="{{values}}" bindchange="onAreaChanged">
+        <picker-view-column>
+          <view wx:for="{{provinces}}" wx:key="{{index}}" style="line-height: 50rpx; text-align: center;">{{item.name}}</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{cities}}" wx:key="{{index}}" style="line-height: 50rpx; text-align: center;">{{item.name}}</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{districts}}" wx:key="{{index}}" style="line-height: 50rpx; text-align: center;">{{item.name}}</view>
+        </picker-view-column>
+      </picker-view>
+  </view>
+</view>

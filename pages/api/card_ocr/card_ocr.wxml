@@ -1,0 +1,26 @@
+<import src="../../common/header.wxml" />
+<import src="../../common/footer.wxml" />
+<view class="container">
+  <template is="header" data="{{title: pageTitle}}"></template>
+  <view class="card_list">
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio" wx:for="{{cardTypes}}" wx:key="{{index}}" style="display: block; margin-bottom: 10px;">
+        <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.title}}
+      </label>
+    </radio-group>
+  </view>
+  <view><button type="default" bindtap="clearData">清空</button></view>
+  <view style="margin-top: 20px; border: 1px solid #ddd;" bindtap="uploadImg">
+    <image src="{{checkedImg}}" style="width: 200rpx; height: 200rpx;"></image>
+  </view>
+  <view class="ocr_result" style="width: 90%; height: auto; margin: 20px auto; word-break: break-all; word-wrap:break-word;" wx:if="{{ocrResult}}">
+    <view>
+      <text>识别结果 : </text>
+    </view>
+    <view wx:for="{{ocrResult}}" wx:key="{{index}}">
+      <text style="margin-right: 10px; color: #f00;">{{item.key}}</text>
+      <text>{{item.value}}</text>
+    </view>
+  </view>
+  <view class="canvasBox" wx:if="{{showCanvas}}"><canvas canvas-id="tempCanvas" style="width: {{canvasWidth}}px; height: {{canvasHeight}}px;"/></view>
+</view>

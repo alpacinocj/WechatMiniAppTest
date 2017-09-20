@@ -15,8 +15,11 @@
     "pages/components/slider/slider",
     "pages/components/progress/progress",
     "pages/components/picker/picker",
+    "pages/components/picker_view/picker_view",
     "pages/components/map/map",
     "pages/components/textarea/textarea",
+    "pages/components/checkbox/checkbox",
+    "pages/components/choose_address/choose_address",
     "pages/api/index/index",
     "pages/api/request/request",
     "pages/api/request_class/request_class",
@@ -31,7 +34,9 @@
     "pages/api/network_type/network_type",
     "pages/api/accelerometer/accelerometer",
     "pages/api/compass/compass",
-    "pages/api/call_phone/call_phone"
+    "pages/api/call_phone/call_phone",
+    "pages/api/map/map",
+    "pages/api/card_ocr/card_ocr"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -69,5 +74,5 @@
     "uploadFile": 10000,
     "downloadFile": 10000
   },
-  "debug": true
+  "debug": false
 }

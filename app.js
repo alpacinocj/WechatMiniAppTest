@@ -1,4 +1,5 @@
 //app.js
+var config = require('./config');
 App({
   // 监听小程序初始化
   onLaunch: function () {
@@ -7,6 +8,10 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+    var self = this;
+    /*setInterval(function() {
+      self.testBackRunningTime();
+    }, 5000);*/
   },
   // 监听小程序显示
   onShow: function () {
@@ -40,5 +45,24 @@ App({
   },
   globalData:{
     userInfo:null
+  },
+  testBackRunningTime: function() {
+    wx.request({
+      url: config.api.backRunning.url,
+      data: {},
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      // header: {}, // 设置请求的 header
+      success: function(res){
+        // success
+        console.log(res);
+      },
+      fail: function(res) {
+        // fail
+        console.log(res);
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
   }
 })

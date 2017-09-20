@@ -79,5 +79,13 @@ Page({
                 return;
             }
         });
+    },
+    showLoading: function() {
+        wx.showLoading({
+            title: '加载中...'
+        });
+    },
+    hideLoading: function() {
+        wx.hideLoading();
     }
 });
